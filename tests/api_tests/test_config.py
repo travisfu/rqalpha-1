@@ -82,3 +82,21 @@ def test_future_info():
             assert trade.transaction_cost == 0
 
     return locals()
+
+
+def test_position():
+    __config__ = {
+        "base": {
+            "accounts": {
+                "stock": 10000000
+            },
+            "init_positions": "000006.XSHE:10000"
+        },
+   }
+
+    def init(context):
+        context.f1 = "000006.XSHE"
+        stock_position = context.portfolio.get_position('000006.XSHE', 'LONG')
+        assert stock_position.quantity == 10000
+
+    return locals()
