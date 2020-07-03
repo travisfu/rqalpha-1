@@ -94,11 +94,13 @@ def update_bundle(data_bundle_path, rqdatac_uri, compression, concurrency):
 
 
 @cli.command()
-@click.option('-d', '--data-bundle-path', default=os.path.expanduser('~/.rqalpha'), type=click.Path(file_okay=False))
+# @click.option('-d', '--data-bundle-path', default=os.path.expanduser('~/.rqalpha'), type=click.Path(file_okay=False))
+@click.option('-d', '--data-bundle-path', default=None, type=click.Path(file_okay=False))
 @click.option('--confirm', default=True, is_flag=True)
 def download_bundle(data_bundle_path, confirm):
     """download bundle (monthly updated)"""
-    default_bundle_path = os.path.abspath(os.path.expanduser('~/.rqalpha/bundle'))
+    # default_bundle_path = os.path.abspath(os.path.expanduser('~/.rqalpha/bundle'))
+    default_bundle_path = os.path.abspath('../../.rqalpha/bundle')
     if data_bundle_path is None:
         data_bundle_path = default_bundle_path
     else:
@@ -161,3 +163,6 @@ def download(out, total_length, url):
                     time.sleep(retry_interval)
                 else:
                     raise
+
+if __name__ == '__main__':
+    download_bundle()

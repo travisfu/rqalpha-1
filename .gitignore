@@ -15,6 +15,7 @@ rqalpha.system.log
 build/
 bundle/
 bundle
+.rqalpha
 persist/
 .coverage
 .tox
