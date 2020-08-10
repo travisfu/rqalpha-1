@@ -25,7 +25,7 @@ from rqalpha import run_file
 config = {
   "base": {
       "data_bundle_path": "E:\PycharmProjects/rqalpha-1/.rqalpha/bundle",
-      "start_date": "2015-03-29",
+      "start_date": "2020-01-15",
       "end_date": "2020-06-30",
       "benchmark": "000932.XSHG",
       "accounts": {
